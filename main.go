@@ -104,8 +104,8 @@ func main() {
 	node := newNode(config, keypair.Address, difficulty)
 
 	fmt.Println("[+] Genesis Hash :", node.Chain[0].Hash)
+	
 	http.HandleFunc("/block", node.handleBlock)
-
 	addr := fmt.Sprintf(":%d", config.Port)
 	fmt.Printf("[+] %s listening on %s, peers: %v\n", config.NodeID, addr, config.Peers)
 
